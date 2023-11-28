@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+    "-//Hibernate/Hibernate Configuration DTD//EN"
+    "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <property name="connection.url">jdbc:postgresql://localhost:5432/testdb</property>
+    <property name="connection.driver_class">org.postgresql.Driver</property> <!-- DB Driver -->
+    <property name="connection.username">postgres</property> <!-- DB User -->
+    <property name="connection.password">1234</property> <!-- DB Password -->
+
+    <property name='connection.pool_size'>1</property>
+    <property name="dialect">org.hibernate.dialect.PostgreSQLDialect</property> <!-- DB Dialect -->
+    <property name="hbm2ddl.auto">update</property> <!-- create / create-drop / update -->
+
+
+    <property name="show_sql">true</property> <!-- Show SQL in console -->
+    <property name="format_sql">true</property> <!-- Show SQL formatted -->
+
+    <property name='current_session_context_class'>thread</property>
+
+
+    <mapping class="org.example.points.entities.CouplePoints"/>
+
+
+    <mapping class="org.example.calculation.entities.Calculation"/>
+    <mapping class="org.example.calculation.entities.Calculation2D"/>
+    <mapping class="org.example.calculation.entities.Calculation3D"/>
+
+
+    <mapping class="org.example.points.entities.Points"/>
+    <mapping class="org.example.points.entities.Points2D"/>
+    <mapping class="org.example.points.entities.Points3D"/>
+
+    <mapping class="org.example.launch.entities.Launch"/>
+
+    <mapping class="org.example.logger.entities.Logger"/>
+
+
+  </session-factory>
+</hibernate-configuration>
